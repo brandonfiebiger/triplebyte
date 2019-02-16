@@ -1,0 +1,10 @@
+.Column {
+  background: orangered;
+  display: inline-block;
+  width: 90%;
+  margin-left: 25px;
+}
+
+.Column:last-child {
+  margin-right: 25px;
+}
