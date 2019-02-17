@@ -1,7 +1,7 @@
 .Column {
   background: orangered;
   display: inline-block;
-  width: 90%;
+  width: 100%;
   margin-left: 25px;
 }
 

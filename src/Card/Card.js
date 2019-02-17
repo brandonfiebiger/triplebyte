@@ -11,9 +11,9 @@ export class Card extends Component {
   render() {
     return(
       <div className="Card">
-        {this.props.column !== 'Paul' ? <button>&larr;</button>: ''}
+        {this.props.column !== 'Paul' ? <button onClick={() => this.props.updateColumnLeft(this.props.id)}>&larr;</button>: ''}
         { this.props.content }
-        {this.props.column !== 'Kitten' ? <button>&rarr;</button>: ''}
+        {this.props.column !== 'Kitten' ? <button onClick={() => this.props.updateColumnRight(this.props.id)}>&rarr;</button>: ''}
       </div>
     )
   }
