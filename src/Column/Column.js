@@ -4,7 +4,7 @@ import { Card } from '../Card/Card';
 
 export const Column = (props) => {
 
-  const displayCards = () => props.cards.map(card => <Card column={card.column} content={card.content} id={card.id}/>);
+  const displayCards = () => props.cards.map(card => <Card updateColumnRight={props.updateColumnRight} updateColumnLeft={props.updateColumnLeft} column={card.column} content={card.content} id={card.id}/>);
 
   const backgroundColor = {
     background: props.color
