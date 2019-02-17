@@ -21,8 +21,40 @@ class App extends Component {
     }
   }
 
-  updateColumn = (id) => {
+  updateColumnRight = (id) => {
+    const rightArrow = {
+      'Paul': 'Lemon',
+      'Lemon': 'Orange',
+      'Orange': 'Kitten'
+    }
+    const alteredState = this.state.cards.map(card => {
+      if (card.id === id) {
+        card.column = rightArrow[card.column];
+      }
+      return card;
+    })
 
+    this.setState({
+      cards: alteredState
+    });
+  }
+
+  updateColumnLeft = (id) => {
+    const leftArrow = {
+      'Kitten': 'Orange',
+      'Orange': 'Lemon',
+      'Lemon': 'Paul'
+    }
+    const alteredState = this.state.cards.map(card => {
+      if (card.id === id) {
+        card.column = leftArrow[card.column];
+      }
+      return card;
+    })
+
+    this.setState({
+      cards: alteredState
+    });
   }
 
   
@@ -41,7 +73,14 @@ class App extends Component {
   
   
   displayColumns = () => this.state.categories.map(category => {
-    return <Column addCard={this.addCard} title={category.title} color={category.color} cards={this.state.cards.filter(card => card.column === category.title)}/>;
+    return <Column 
+              updateColumnLeft={this.updateColumnLeft} 
+              updateColumnRight={this.updateColumnRight} 
+              addCard={this.addCard} 
+              title={category.title} 
+              color={category.color} 
+              cards={this.state.cards.filter(card => card.column === category.title)}
+            />;
   });
 
 
